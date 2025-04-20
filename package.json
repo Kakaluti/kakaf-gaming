@@ -10,7 +10,7 @@
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm install && npm prune"
+    "build": "rm -rf node_modules package-lock.json && npm install && npm prune"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
