@@ -53,17 +53,7 @@ app.use((req, res, next) => {
 });
 
 // CORS configuration
-const allowedOrigins = process.env.ALLOWED_ORIGINS.split(',');
-app.use(cors({
-  origin: function(origin, callback) {
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true
-}));
+app.use(cors({ origin: '*' }));
 
 // MongoDB connection
 mongoose.connect(process.env.MONGODB_URI)
